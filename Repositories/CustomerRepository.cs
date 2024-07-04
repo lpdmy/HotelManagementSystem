@@ -39,5 +39,20 @@ namespace Repositories
         {
             return CustomerDAO.Instance.GetCustomerByEmail(email);
         }
+
+        public int GetNewId()
+        {
+            return CustomerDAO.Instance.GetNewId();
+        }
+
+        public Customer GetCurrentCustomer()
+        {
+            return CustomerDAO.Instance.GetCurrentCustomer();
+        }
+
+        public void UpdateCurrentCustomer(Customer customer)
+        {
+            CustomerDAO.Instance.UpdateCustomer(customer);
+        }
     }
 }

@@ -1,3 +1,6 @@
+D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\DataAccessLayer.deps.json
+D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\DataAccessLayer.runtimeconfig.json
+D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\DataAccessLayer.exe
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\Repositories.deps.json
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\Repositories.dll
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\Repositories.pdb
@@ -10,11 +13,9 @@ D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\Reposit
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfoInputs.cache
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\Repositories.AssemblyInfo.cs
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\Repositories.csproj.CoreCompileInputs.cache
+D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\Reposito.787EC4B2.Up2Date
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\Repositories.dll
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\refint\Repositories.dll
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\Repositories.pdb
 D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\obj\Debug\net8.0\ref\Repositories.dll
-D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\DataAccessLayer.deps.json
-D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\DataAccessLayer.runtimeconfig.json
-D:\STUDY\SU24\PRN212\HotelManagementSystem\Repositories\bin\Debug\net8.0\DataAccessLayer.exe

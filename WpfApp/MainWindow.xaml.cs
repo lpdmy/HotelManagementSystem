@@ -26,13 +26,15 @@ namespace WpfApp
             string email = txtUserName.Text;
             string password = txtPass.Password;
 
-            // Fetch the customer by email
+            
             var customer = _customerRepository.GetCustomerByEmail(email);
 
             if (customer != null && customer.Password == password)
             {
                 MessageBox.Show("Login successful!");
-                // Proceed to the next part of the application
+                this.Hide();
+                CustomerWindow customerWindow = new CustomerWindow();
+                customerWindow.Show();
             }
             else if (customer == null && emailConfig.Equals(txtUserName.Text))
             {

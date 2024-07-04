@@ -11,28 +11,20 @@ namespace DataAccessLayer
     {
         static void Main(string[] args)
         {
-            List<RoomInformation> list = RoomInformationDAO.Instance.GetRoomInformations();
-            foreach (RoomInformation room in list)
+            RoomInformationDAO roomInformationDAO = new RoomInformationDAO();
+            roomInformationDAO.UpdateRoomInformation(new RoomInformation()
             {
-                Console.WriteLine(room.RoomID);
-            }
-            RoomInformationDAO.Instance.SaveRoomInformation(new RoomInformation()
-            {
-                RoomID = 100,
-                RoomNumber = "100",
-                RoomMaxCapacity = 100,
-                RoomDescription = "",
-                RoomType = new RoomType() { },
-                RoomStatus = RoomStatus.Active,
-                RoomPricePerDate = 100,
-                RoomTypeID = 1,
-                
+                RoomID = 1,
+                RoomNumber = "101",
+                RoomDescription = "Single room with a beautiful view of the city.",
+                RoomMaxCapacity = 1,
+                RoomStatus = RoomStatus.Deleted,
+                RoomPricePerDate = 100.00m,
+                RoomTypeID = 1
             });
-            List<RoomInformation> list1 = RoomInformationDAO.Instance.GetRoomInformations();
-            Console.WriteLine("New");
-            foreach (RoomInformation room in list1)
+            foreach (RoomInformation r in roomInformationDAO.GetRoomInformations())
             {
-                Console.WriteLine(room.RoomID);
+                Console.WriteLine(r.RoomID + " " + r.RoomStatus);
             }
         }
     }

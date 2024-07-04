@@ -2,7 +2,19 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="AddNewCustomer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UpdateCustomerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UpdateProfile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UpdateRoomWindow.xaml.cs">
@@ -10,10 +22,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddNewCustomer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Admin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AddRoomWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UpdateCustomerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UpdateProfile.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UpdateRoomWindow.xaml">

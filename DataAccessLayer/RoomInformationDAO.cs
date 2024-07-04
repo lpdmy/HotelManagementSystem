@@ -6,8 +6,9 @@ namespace DataAccessLayer
     public class RoomInformationDAO : SingletonBase<RoomInformationDAO>
     {
         List<RoomInformation> list = new List<RoomInformation>();
-        public RoomInformationDAO() {
-         list.AddRange(new List<RoomInformation> {
+        public RoomInformationDAO()
+        {
+            list.AddRange(new List<RoomInformation> {
 
 
                 new RoomInformation
@@ -109,58 +110,30 @@ namespace DataAccessLayer
                     RoomStatus = RoomStatus.Active,
                     RoomPricePerDate = 350.00m,
                     RoomTypeID = 3
-                },
-                new RoomInformation
-                {
-                    RoomID = 11,
-                    RoomNumber = "111",
-                    RoomDescription = "Single room with shared bathroom.",
-                    RoomMaxCapacity = 1,
-                    RoomStatus = RoomStatus.Active,
-                    RoomPricePerDate = 70.00m,
-                    RoomTypeID = 1
-                },
-                new RoomInformation
-                {
-                    RoomID = 12,
-                    RoomNumber = "112",
-                    RoomDescription = "Double room with king-sized bed.",
-                    RoomMaxCapacity = 2,
-                    RoomStatus = RoomStatus.Active,
-                    RoomPricePerDate = 160.00m,
-                    RoomTypeID = 2
-                },
-                new RoomInformation
-                {
-                    RoomID = 13,
-                    RoomNumber = "113",
-                    RoomDescription = "Suite with jacuzzi.",
-                    RoomMaxCapacity = 3,
-                    RoomStatus = RoomStatus.Active,
-                    RoomPricePerDate = 220.00m,
-                    RoomTypeID = 3
-                } }                
-            );}
+                } }
+
+               );
+        }
 
         public List<RoomInformation> GetRoomInformations()
         {
-           
+
 
             return list;
         }
         public void SaveRoomInformation(RoomInformation r)
         {
-            list.Add( r );
+            list.Add(r);
         }
 
-        public void UpdateRoomInformation (RoomInformation r)
+        public void UpdateRoomInformation(RoomInformation r)
         {
-            foreach ( var current in list.ToList() )
+            foreach (var current in list.ToList())
             {
-                if (current.RoomID == r.RoomID )
+                if (current.RoomID == r.RoomID)
                 {
                     current.RoomDescription = r.RoomDescription;
-                    current.RoomPricePerDate    = r.RoomPricePerDate;
+                    current.RoomPricePerDate = r.RoomPricePerDate;
                     current.RoomTypeID = r.RoomTypeID;
                     current.RoomNumber = r.RoomNumber;
                     current.RoomDescription = r.RoomDescription;
@@ -181,7 +154,7 @@ namespace DataAccessLayer
             }
         }
 
-        public RoomInformation GetRoomInformationById (int id)
+        public RoomInformation GetRoomInformationById(int id)
         {
             foreach (var current in list.ToList())
             {
@@ -192,5 +165,14 @@ namespace DataAccessLayer
             }
             return null;
         }
+
+        public int GetNewId()
+        {
+            return list.Max(x => x.RoomID) + 1;
+        }
+
+    
     }
 }
+   
+

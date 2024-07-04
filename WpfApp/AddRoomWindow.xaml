@@ -41,6 +41,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBox Grid.Column="0"
+                     Name="txtRoomNumber"
   VerticalAlignment="Center"
   materialDesign:HintAssist.Hint="Room Number"
   materialDesign:HintAssist.HelperText="Room Number can not be duplicated"
@@ -49,6 +50,7 @@
                 Width="300"
   />
             <TextBox Grid.Column="1"
+                     Name="txtRoomMaxCapacity"
 VerticalAlignment="Center"
 materialDesign:HintAssist.Hint="Room Maxcapacity"
 materialDesign:HintAssist.HelperText="How many people in a room?"
@@ -63,6 +65,7 @@ Style="{StaticResource MaterialDesignFloatingHintTextBox}"
  >
               
                 <TextBox
+                    Name="txtRoomDesc"
     Height="100"
                     Width="700"
     VerticalAlignment="Top"
@@ -87,7 +90,9 @@ Content="View Text Input Count"
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0"
+            <TextBox 
+                Name="txtRoomPrice"
+                Grid.Column="0"
   VerticalAlignment="Center"
   materialDesign:HintAssist.Hint="Room Price"
   materialDesign:HintAssist.HelperText="Room Price > 0"
@@ -110,6 +115,47 @@ Content="View Text Input Count"
                 </ComboBox.ItemTemplate>
             </ComboBox>
 
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ComboBox
+        Name="ComboStatus"
+        Grid.Column="0"
+        materialDesign:HintAssist.Hint="Room Status"
+        materialDesign:TextFieldAssist.PrefixText="$"
+        IsEditable="True"
+        Width="300"
+        SelectionChanged="ComboBox_SelectionChangedStatus"
+       >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+            Width="100"
+            Content="Add"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            Style="{StaticResource MaterialDesignPaperLightButton}"
+            ToolTip="Resource name: MaterialDesignPaperLightButton" 
+            Click="AddButton_Click"/>
+                <Button Grid.Column="1"
+            Width="100"
+            Content="Cancel"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            Style="{StaticResource MaterialDesignPaperLightButton}"
+            ToolTip="Resource name: MaterialDesignPaperLightButton" 
+            Click="CancelButton_Click"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

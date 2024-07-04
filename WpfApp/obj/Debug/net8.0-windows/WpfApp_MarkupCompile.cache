@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\STUDY\SU24\PRN212\HotelManagementSystem\WpfApp\App.xaml
-4-834654654
+81412970443
 
-7139853723
+111430561702
 2121021472011
-AddRoomWindow.xaml;Admin.xaml;MainWindow.xaml;UpdateRoomWindow.xaml;
+AddNewCustomer.xaml;AddRoomWindow.xaml;Admin.xaml;CustomerWindow.xaml;MainWindow.xaml;UpdateCustomerWindow.xaml;UpdateProfile.xaml;UpdateRoomWindow.xaml;
 
 False
 

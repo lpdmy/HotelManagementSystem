@@ -16,5 +16,10 @@ namespace Repositories
         Customer GetCustomerById (int id);
         Customer GetCustomerByEmail(string email);
 
+        int GetNewId();
+
+        Customer GetCurrentCustomer();
+
+        void UpdateCurrentCustomer(Customer customer);
     }
 }

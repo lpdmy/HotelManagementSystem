@@ -14,5 +14,7 @@ namespace Repositories
         void DeleteRoomInformation(RoomInformation r);
         void UpdateRoomInformation(RoomInformation r);
         RoomInformation GetRoomInformationById(int roomId);
+
+        int GetNewId();
     }
 }

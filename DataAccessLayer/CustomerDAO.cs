@@ -10,6 +10,7 @@ namespace DataAccessLayer
 {
     public class CustomerDAO : SingletonBase<CustomerDAO>
     {
+        Customer CurrentCustomer = new Customer();
         List<Customer> list = new List<Customer>()
             {
                 new Customer
@@ -113,34 +114,44 @@ namespace DataAccessLayer
                     Password = "password107"
                 }
             };
+
+        public Customer GetCurrentCustomer()
+        {
+            return CurrentCustomer;
+        }
         public List<Customer> GetCustomers()
         {
             
             return list;
         }
+
         public void AddCustomer (Customer customer)
         {
             list.Add(customer);
         }
 
+        public void UpdateCurrentCustomer(Customer customer)
+        {
+            CurrentCustomer = customer;
+        }
         public void UpdateCustomer (Customer customer)
         {
-            foreach (var current in list) {
+            foreach (var current in list.ToList()) {
                 if (current.CustomerID == customer.CustomerID)
                 {
                     current.CustomerFullName = customer.CustomerFullName;
                     current.Telephone = customer.Telephone;
                     current.EmailAddress = customer.EmailAddress;
-                    current.CustomerBirthday = current.CustomerBirthday;
-                    current.CustomerStatus = current.CustomerStatus;
-                    current.Password = current.Password;
+                    current.CustomerBirthday = customer.CustomerBirthday;
+                    current.CustomerStatus = customer.CustomerStatus;
+                    current.Password = customer.Password;
                 }
             }
         }
 
         public void DeleteCustomer(Customer customer)
         {
-            foreach (var current in list)
+            foreach (var current in list.ToList())
             {
                 if (current.CustomerID == customer.CustomerID)
                 {
@@ -168,10 +179,16 @@ namespace DataAccessLayer
             {
                 if (current.EmailAddress.Equals(email))
                 {
+                    CurrentCustomer = current;
                     return current;
                 }
             }
             return null;
+        }
+
+        public int GetNewId ()
+        {
+            return list.Max(x => x.CustomerID) + 1;
         }
         
     }

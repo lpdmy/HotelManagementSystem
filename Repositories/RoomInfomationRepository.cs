@@ -15,6 +15,11 @@ namespace Repositories
             RoomInformationDAO.Instance.DeleteRoomInformation(r);
         }
 
+        public int GetNewId()
+        {
+            return RoomInformationDAO.Instance.GetNewId();
+        }
+
         public RoomInformation GetRoomInformationById(int roomId)
         {
             return RoomInformationDAO.Instance.GetRoomInformationById(roomId);

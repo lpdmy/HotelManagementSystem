@@ -1,0 +1,362 @@
+﻿<Window x:Class="WpfApp.CustomerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Customer Window"
+        Height="450"
+        Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <!--<TextBlock Text="{Binding CustomerFullName}"></TextBlock>-->
+        <materialDesign:Card>
+            <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
+                        SnapsToDevicePixels="True"
+                        Style="{StaticResource MaterialDesignNavigationRailTabControl}"
+                        TabStripPlacement="Left">
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Width="auto"
+                                    Height="auto">
+
+                            <materialDesign:PackIcon Width="24"
+                                                     Height="24"
+                                                     HorizontalAlignment="Center"
+                                                     Kind="Account" />
+                            <TextBlock HorizontalAlignment="Center"
+                                       Text="Account" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <StackPanel Margin="16">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Margin="0,0,0,8"
+                                       Style="{StaticResource MaterialDesignHeadline5TextBlock}"><Run Text="My Account" /><LineBreak /><Run /></TextBlock>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Button 
+                                Grid.Column="0"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Right"
+                                Width="80"
+                                    Content="Update"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignPaperButton}"
+                                    ToolTip="Resource name: MaterialDesignPaperButton"
+                                    Click="ButtonUpdate_Click" />
+                            <Button Grid.Column="1"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Right"
+                                    Width="80"
+                                    Content="Log out"
+                                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Style="{StaticResource MaterialDesignPaperButton}"
+                                    ToolTip="Resource name: MaterialDesignPaperButton"
+                                    Click="ButtonLogOut_Click" />
+                            </Grid>
+                        </Grid>
+                        <materialDesign:Card Width="600"
+                                             Padding="8"
+                                             Background="White"
+                                             Foreground="Indigo">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Full Name -->
+                                <Grid Grid.Row="0"
+                                      Grid.Column="0"
+                                      Margin="10">
+                                    <TextBlock FontSize="15">Full Name:</TextBlock>
+                                </Grid>
+                                <Grid Grid.Row="0"
+                                      Grid.Column="1"
+                                      Margin="10">
+                                    <TextBlock Text="{Binding Customer.CustomerFullName}" />
+                                </Grid>
+
+                                <!-- Customer ID -->
+                                <Grid Grid.Row="1"
+                                      Grid.Column="0"
+                                      Margin="10">
+                                    <TextBlock FontSize="15">Customer ID:</TextBlock>
+                                </Grid>
+                                <Grid Grid.Row="1"
+                                      Grid.Column="1"
+                                      Margin="10">
+                                    <TextBlock Text="{Binding Customer.CustomerID}" />
+                                </Grid>
+
+                                <!-- Telephone -->
+                                <Grid Grid.Row="2"
+                                      Grid.Column="0"
+                                      Margin="10">
+                                    <TextBlock FontSize="15">Telephone:</TextBlock>
+                                </Grid>
+                                <Grid Grid.Row="2"
+                                      Grid.Column="1"
+                                      Margin="10">
+                                    <TextBlock Text="{Binding Customer.Telephone}" />
+                                </Grid>
+
+                                <!-- Email Address -->
+                                <Grid Grid.Row="3"
+                                      Grid.Column="0"
+                                      Margin="10">
+                                    <TextBlock FontSize="15">Email Address:</TextBlock>
+                                </Grid>
+                                <Grid Grid.Row="3"
+                                      Grid.Column="1"
+                                      Margin="10">
+                                    <TextBlock Text="{Binding Customer.EmailAddress}" />
+                                </Grid>
+
+                                <!-- Birthday -->
+                                <Grid Grid.Row="4"
+                                      Grid.Column="0"
+                                      Margin="10">
+                                    <TextBlock FontSize="15">Birthday:</TextBlock>
+                                </Grid>
+                                <Grid Grid.Row="4"
+                                      Grid.Column="1"
+                                      Margin="10">
+                                    <TextBlock Text="{Binding Customer.CustomerBirthday, StringFormat='{}{0:dd/MM/yyyy}'}" />
+                                </Grid>
+
+                                <!-- Customer Status -->
+                                <Grid Grid.Row="5"
+                                      Grid.Column="0"
+                                      Margin="10">
+                                    <TextBlock FontSize="15">Customer Status:</TextBlock>
+                                </Grid>
+                                <Grid Grid.Row="5"
+                                      Grid.Column="1"
+                                      Margin="10">
+                                    <TextBlock Text="{Binding Customer.CustomerStatus}"
+                                               Height="40"
+                                               VerticalAlignment="Bottom" />
+                                </Grid>
+
+                                <!-- Password -->
+                                <Grid Grid.Row="6"
+                                      Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*" />
+                                        <ColumnDefinition Width="25*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock FontSize="15"
+                                               Grid.ColumnSpan="2"
+                                               Margin="10">Password:</TextBlock>
+                                </Grid>
+                                <Grid Grid.Row="6"
+                                      Grid.Column="1"
+                                      Margin="10">
+                                    <TextBlock Text="{Binding Customer.Password}" />
+                                </Grid>
+
+                            </Grid>
+                        </materialDesign:Card>
+                    </StackPanel>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Width="auto"
+                                    Height="auto">
+                            <materialDesign:PackIcon Width="24"
+                                                     Height="24"
+                                                     HorizontalAlignment="Center"
+                                                     Kind="Bed" />
+                            <TextBlock HorizontalAlignment="Center"
+                                       Text="Booking" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <StackPanel Margin="16">
+                        <TextBlock Margin="0,0,0,8"
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                   Text="Booking" />
+                        <materialDesign:Card Width="700"
+                                             Padding="8"
+                                             Background="{DynamicResource PrimaryHueDarkBrush}"
+                                             Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                             UniformCornerRadius="6">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+
+                                </Grid.ColumnDefinitions>
+
+
+                                <ComboBox Grid.Row="0"
+                                          Grid.Column="0"
+                                          Margin="10"
+                                          MinWidth="72"
+                                          materialDesign:HintAssist.Hint="Room Number"
+                                          materialDesign:HintAssist.HelperText="Room available"
+                                          Name="cbRoom"
+                                          SelectedValue="{Binding SelectedValueOne}"
+                                          DisplayMemberPath="{Binding RoomNumber}"
+                                          SelectionChanged="cbRoom_SelectionChanged">
+                                    <ComboBox.SelectedItem>
+                                        <Binding Mode="TwoWay"
+                                                 Path="SelectedValueOne"
+                                                 UpdateSourceTrigger="PropertyChanged">
+
+                                        </Binding>
+                                    </ComboBox.SelectedItem>
+                                </ComboBox>
+
+                                <DatePicker Grid.Column="0"
+                                            Margin="10"
+                                            Grid.Row="1"
+                                            Name="txtStartDate"
+                                            SelectedDate="{Binding StartTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            materialDesign:HintAssist.Hint="Start Date"
+                                            materialDesign:TextFieldAssist.HasClearButton="True"
+                                            materialDesign:HintAssist.HelperText="Start date"
+                                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+
+                                <DatePicker Grid.Column="1"
+                                            Name="txtEndDate"
+                                            Margin="10"
+                                            Grid.Row="1"
+                                            SelectedDate="{Binding EndTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            materialDesign:HintAssist.Hint="End Date"
+                                            materialDesign:HintAssist.HelperText="End date"
+                                            materialDesign:TextFieldAssist.HasClearButton="True" />
+                                <TextBox 
+                                    Grid.Row="2"
+                                    IsReadOnly="True"
+                                    Name="txtPrice"
+                                    Margin="10"
+                                         materialDesign:HintAssist.HelperText="Price per date"
+                                         materialDesign:HintAssist.Hint="Price per date"
+                                    Text="{Binding RoomPricePerDate}"
+                                       >
+                                   
+                                </TextBox>
+                                <TextBox Grid.Row="2" Grid.Column="1"
+                                         IsReadOnly="True"
+                                         Name="txtActualPrice"
+                                         Margin="10"
+                                         materialDesign:HintAssist.HelperText="Price actual"
+                                         materialDesign:HintAssist.Hint="Price actual"
+                                         Text="{Binding ActualPrice}">
+
+                                </TextBox>
+                                <TextBox Grid.Row="3"
+                                         Grid.Column="0"
+                                         IsReadOnly="True"
+                                         Name="txtTotalPrice"
+                                         Margin="10"
+                                         materialDesign:HintAssist.HelperText="Total price include 8% tax"
+                                         materialDesign:HintAssist.Hint="Total price"
+                                         Text="{Binding TotalPrice}">
+
+                                </TextBox>
+                                <Button 
+                                    HorizontalAlignment="Left"
+                                    Grid.Row="4"
+                                        Grid.Column="0"
+                                        Margin="20"
+                                        Width="80"
+                                        Content="Book"
+                                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                        Style="{StaticResource MaterialDesignPaperButton}"
+                                        ToolTip="Book room today to have discount 0%"
+                                        Click="ButtonBook_Click" />
+                                
+                            </Grid>
+                        </materialDesign:Card>
+                    </StackPanel>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Width="auto"
+                                    Height="auto">
+                            <materialDesign:PackIcon Width="24"
+                                                     Height="24"
+                                                     HorizontalAlignment="Center"
+                                                     Kind="History" />
+                            <TextBlock HorizontalAlignment="Center"
+                                       Text="History" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <StackPanel Margin="16">
+                        <TextBlock Margin="0,0,0,8"
+                                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                                   Text="Booking history" />
+                        <materialDesign:Card Width="700"
+                                             Padding="8"
+                                             Background="{DynamicResource PrimaryHueDarkBrush}"
+                                             Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                             UniformCornerRadius="6">
+
+                        </materialDesign:Card>
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                            <DataGrid CanUserAddRows="True"
+                                      CanUserDeleteRows="True"
+                                      x:Name="dtBookingDetails"
+                                      SelectionMode="Extended"
+                                      SelectionUnit="FullRow"
+                                      AutoGenerateColumns="False"
+                                      IsReadOnly="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID"
+                                                        Binding="{Binding BookingReservationID}" />
+                                    <DataGridTextColumn Header="Room Number"
+                                                        Binding="{Binding RoomInformation.RoomNumber}" />
+                                    <DataGridTextColumn Header="Booking Date"
+                                                        Binding="{Binding BookingReservation.BookingDate}" />
+                                    <DataGridTextColumn Header="Start Date"
+                                                        Binding="{Binding StartDate}" />
+                                    <DataGridTextColumn Header="End Date"
+                                                        Binding="{Binding EndDate}" />
+                                    <DataGridTextColumn Header="Total Price"
+                                                        Binding="{Binding BookingReservation.TotalPrice}" />
+                                    <DataGridTextColumn Header="Booking Status"
+                                                        Binding="{Binding BookingReservation.BookingStatus}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                    </StackPanel>
+                </TabItem>
+
+
+            </TabControl>
+        </materialDesign:Card>
+    </Grid>
+</Window>
